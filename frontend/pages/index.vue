@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt-logo />
-    {{ data }}
+    <p>{{ data }}</p>
   </div>
 </template>
 
@@ -19,3 +19,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
