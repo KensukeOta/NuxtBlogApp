@@ -26,6 +26,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/bootstrap/bootstrap.min.css'
+  ],
+
+  script: [
+    {
+      src: "~/assets/bootstrap/bootstrap.bundle.min.js",
+      type: "text/javascript"
+    }
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
