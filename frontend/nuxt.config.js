@@ -54,7 +54,12 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
   ],
+
+  styleResources: {
+    scss: ['~/assets/scss/app.scss'],
+  },
 
   proxy: {
     '/api': (environment === 'development') ? 'http://localhost:8080' : 'https://api.example.com'
