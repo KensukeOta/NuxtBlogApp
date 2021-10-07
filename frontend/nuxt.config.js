@@ -54,6 +54,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     proxy: true,
+    credentials: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
