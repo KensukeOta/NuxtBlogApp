@@ -1,7 +1,21 @@
 <template>
-  <Tutorial/>
+  <div>
+    <nuxt-logo />
+    {{ data }}
+  </div>
 </template>
 
 <script>
-export default {}
+import NuxtLogo from '../components/NuxtLogo.vue'
+export default {
+  components: {
+    NuxtLogo
+  },
+  async asyncData(app) {
+    const data = await app.$axios.$get('/api');
+    return {
+      data
+    }
+  }
+}
 </script>

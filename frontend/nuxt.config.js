@@ -1,3 +1,5 @@
+const environment = process.env.NODE_ENV || 'development';
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -45,8 +47,14 @@ export default {
     '@nuxtjs/axios',
   ],
 
+  proxy: {
+    '/api': (environment === 'development') ? 'http://localhost:8080' : 'https://api.example.com'
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
