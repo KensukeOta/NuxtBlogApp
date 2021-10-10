@@ -2,9 +2,11 @@
   <header>
     <nuxt-link to="/">NuxtBlogApp</nuxt-link>
     <div>
-      <nuxt-link to="/register">新規登録</nuxt-link>
       <button v-if="$auth.loggedIn" @click="logout()">ログアウト</button>
-      <nuxt-link v-else to="/login">ログイン</nuxt-link>
+      <div v-else>
+        <nuxt-link to="/register">新規登録</nuxt-link>
+        <nuxt-link to="/login">ログイン</nuxt-link>
+      </div>
     </div>
   </header>
 </template>
