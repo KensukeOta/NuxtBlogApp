@@ -1,5 +1,7 @@
 <template>
   <div>
+    <p>ログイン状態: {{ $auth.loggedIn }}</p>
+    <p v-if="$auth.loggedIn">{{ user }}</p>
     <nuxt-logo />
   </div>
 </template>
@@ -10,6 +12,12 @@ export default {
   auth: false,
   components: {
     NuxtLogo
+  },
+
+  computed: {
+    user() {
+      return this.$auth.user;
+    }
   },
 }
 </script>

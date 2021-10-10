@@ -3,7 +3,7 @@
     <nuxt-link to="/">NuxtBlogApp</nuxt-link>
     <div>
       <nuxt-link to="/register">新規登録</nuxt-link>
-      <nuxt-link v-if="$auth.loggedIn" to="">ログアウト</nuxt-link>
+      <button v-if="$auth.loggedIn" @click="logout()">ログアウト</button>
       <nuxt-link v-else to="/login">ログイン</nuxt-link>
     </div>
   </header>
@@ -11,7 +11,11 @@
 
 <script>
 export default {
-
+  methods: {
+    logout() {
+      this.$auth.logout();
+    }
+  }
 }
 </script>
 

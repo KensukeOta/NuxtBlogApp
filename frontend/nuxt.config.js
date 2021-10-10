@@ -75,17 +75,17 @@ export default {
 
   auth: {
     redirect: {
-      login: '/login',
-      logout: '/login',
-      callback: false,
-      home: '/'
+      login: '/login',  //  ログインが必要な場合、ユーザーはこのパスにリダイレクトされる
+      logout: '/login', //  ログアウト後に現在のルートが保護されている場合、ユーザーはこのパスにリダイレクトされる
+      callback: false,  //  ログイン後、ユーザーはIDプロバイダーによってこのパスにリダイレクトされる
+      home: '/'         //  ログイン後、ユーザーはこのパスにリダイレクトされる
     },
     strategies: {
       local: {
         endpoints: {
           login: { url: '/api/login', method: 'post', propertyName: false },
           user: { url: '/api/user', method: 'get', propertyName: false },
-          logout: false
+          logout: { url: '/api/logout', method: 'post', propertyName: false },
         },
         tokenRequired: false,
         tokenType: false,

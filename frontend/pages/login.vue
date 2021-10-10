@@ -38,8 +38,7 @@
         try {
           const response = await this.$auth.loginWith('local', { data: this.form });
           console.log(response);
-
-        } catch(error) {
+        } catch (error) {
           console.log(error);
         }
       },
