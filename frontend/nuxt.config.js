@@ -55,20 +55,46 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/auth',
   ],
 
   styleResources: {
     scss: ['~/assets/scss/app.scss'],
   },
 
-  proxy: {
-    '/api': (environment === 'development') ? 'http://localhost:8080' : 'https://api.example.com'
-  },
+  // proxy: {
+  //   '/api': (environment === 'development') ? 'http://localhost:8080' : 'https://api.example.com'
+  // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    proxy: true,
+    // proxy: true,
+    baseURL: "http://localhost:8080",
     credentials: true,
+  },
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      callback: false,
+      home: '/'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/login', method: 'post', propertyName: false },
+          user: { url: '/api/user', method: 'get', propertyName: false },
+          logout: false
+        },
+        tokenRequired: false,
+        tokenType: false,
+      }
+    },
+    localStorage: false,
+  },
+  router: {
+    middleware: ['auth']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

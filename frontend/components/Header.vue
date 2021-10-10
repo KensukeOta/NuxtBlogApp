@@ -3,7 +3,8 @@
     <nuxt-link to="/">NuxtBlogApp</nuxt-link>
     <div>
       <nuxt-link to="/register">新規登録</nuxt-link>
-      <nuxt-link to="/login">ログイン</nuxt-link>
+      <nuxt-link v-if="$auth.loggedIn" to="">ログアウト</nuxt-link>
+      <nuxt-link v-else to="/login">ログイン</nuxt-link>
     </div>
   </header>
 </template>
