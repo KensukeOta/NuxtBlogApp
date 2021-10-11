@@ -2,16 +2,17 @@
   <div>
     <p>ログイン状態: {{ $auth.loggedIn }}</p>
     <p v-if="$auth.loggedIn">{{ user }}</p>
-    <nuxt-logo />
+    <div class="post-btn-area">
+      <nuxt-link to="/posts/create" class="btn post-btn">投稿する</nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
-import NuxtLogo from '../components/NuxtLogo.vue'
 export default {
   auth: false,
   components: {
-    NuxtLogo
+    
   },
 
   computed: {
@@ -23,5 +24,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .post-btn-area {
+    text-align: center;
+    .post-btn {
+      background: $themeColor;
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 </style>
