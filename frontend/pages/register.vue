@@ -20,7 +20,7 @@
             <label for="password_confirmation">PasswordConfirmation</label>
             <input type="password" class="form-control" id="password_confirmation" placeholder="Enter password_confirmation" v-model="form.password_confirmation" required />
           </div>
-          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="submit" class="btn btn-success">登録</button>
         </form>
       </div>
     </div>

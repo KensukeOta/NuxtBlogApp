@@ -12,7 +12,7 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Enter password" v-model="form.password" required />
           </div>
-          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="submit" class="btn btn-success">ログイン</button>
         </form>
       </div>
     </div>
