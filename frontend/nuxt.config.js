@@ -26,7 +26,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/bootstrap/bootstrap.min.css'
+    '~/assets/bootstrap/bootstrap.min.css',
+    '~/assets/scss/app.scss',
   ],
 
   script: [
@@ -59,7 +60,7 @@ export default {
   ],
 
   styleResources: {
-    scss: ['~/assets/scss/app.scss'],
+    scss: ['~/assets/scss/_variables.scss'],
   },
 
   // proxy: {
