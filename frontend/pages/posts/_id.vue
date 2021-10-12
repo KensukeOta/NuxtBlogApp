@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>{{ post.title }}</h1>
-    <p>{{post.user.name }}</p>
-    <p>{{ post.body }}</p>
+    <p>{{ post.user.name }}</p>
+    <p class="u-pre-wrap" v-text="post.body"></p>
   </div>
 </template>
 
