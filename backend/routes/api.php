@@ -30,5 +30,5 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::post('/register', [RegisterController::class, 'register']);
 
-// Route::get('/posts/index', [PostController::class, 'index']);
+Route::get('/posts/index', [PostController::class, 'index']);
 Route::post('/posts/store', [PostController::class, 'store']);
