@@ -6,7 +6,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.user.name }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <nuxt-link :to="{path: `/posts/${post.id}`}" class="btn">記事を読む</nuxt-link>
           </div>
         </div>
       </li>
@@ -37,5 +37,9 @@ export default {
     list-style: none;
     padding: 0;
     margin: 0;
+    a {
+      background: $themeColor;
+      color: #fff;
+    }
   }
 </style>
