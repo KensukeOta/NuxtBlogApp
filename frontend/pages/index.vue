@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p>ログイン状態: {{ $auth.loggedIn }}</p>
-    <p v-if="$auth.loggedIn">{{ user }}</p>
+    <p>ログイン状態: {{ $store.state.auth.loggedIn }}</p>
+    <p v-if="$store.state.auth.loggedIn">{{ user }}</p>
     <div class="post-btn-area">
       <nuxt-link to="/posts/create" class="btn post-btn">投稿する</nuxt-link>
     </div>

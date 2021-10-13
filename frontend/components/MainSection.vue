@@ -7,7 +7,7 @@
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.user.name }}</p>
             <nuxt-link :to="{path: `/posts/${post.id}`}" class="btn">記事を読む</nuxt-link>
-            <nuxt-link v-if="$auth.user.name === post.user.name" :to="{path: `/posts/${post.id}/edit`}" class="btn">編集する</nuxt-link>
+            <nuxt-link v-if="$store.state.auth.user.id === post.user.id" :to="{path: `/posts/${post.id}/edit`}" class="btn">編集する</nuxt-link>
           </div>
         </div>
       </li>
