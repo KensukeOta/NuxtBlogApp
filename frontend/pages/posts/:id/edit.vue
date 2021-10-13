@@ -25,6 +25,9 @@ export default {
   async fetch() {
     try {
       const post = await this.$axios.$get(`/api/posts/${this.$nuxt.context.params.id}`);
+      if (!(this.$store.state.auth.user.id === post.user_id)) {
+        return this.$nuxt.context.redirect('/');
+      }
       this.form.title = post.title;
       this.form.body = post.body;
     } catch (error) {
