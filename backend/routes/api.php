@@ -36,3 +36,5 @@ Route::get('/posts/{id}', [PostController::class, 'show'])
     ->where('id', '[0-9]+');
 Route::patch('/posts/{id}', [PostController::class, 'update'])
     ->where('id', '[0-9]+');
+Route::delete('/posts/{id}', [PostController::class, 'destroy'])
+    ->where('id', '[0-9]+');
